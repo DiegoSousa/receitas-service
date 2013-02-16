@@ -5,17 +5,10 @@ package br.edu.ufpb.receitas.domain;
 
 import br.edu.ufpb.receitas.domain.Ingrediente;
 import br.edu.ufpb.receitas.domain.Receita;
+import br.edu.ufpb.receitas.domain.Usuario;
 import java.util.Set;
 
 privileged aspect Receita_Roo_JavaBean {
-    
-    public long Receita.getId() {
-        return this.id;
-    }
-    
-    public void Receita.setId(long id) {
-        this.id = id;
-    }
     
     public String Receita.getNome() {
         return this.nome;
@@ -47,6 +40,14 @@ privileged aspect Receita_Roo_JavaBean {
     
     public void Receita.setIngredientes(Set<Ingrediente> ingredientes) {
         this.ingredientes = ingredientes;
+    }
+    
+    public Set<Usuario> Receita.getLikes() {
+        return this.likes;
+    }
+    
+    public void Receita.setLikes(Set<Usuario> likes) {
+        this.likes = likes;
     }
     
 }

@@ -17,19 +17,19 @@ privileged aspect Receita_Roo_Jpa_Entity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_")
-    private Long Receita.id_;
+    @Column(name = "id")
+    private Long Receita.id;
     
     @Version
     @Column(name = "version")
     private Integer Receita.version;
     
-    public Long Receita.getId_() {
-        return this.id_;
+    public Long Receita.getId() {
+        return this.id;
     }
     
-    public void Receita.setId_(Long id) {
-        this.id_ = id;
+    public void Receita.setId(Long id) {
+        this.id = id;
     }
     
     public Integer Receita.getVersion() {

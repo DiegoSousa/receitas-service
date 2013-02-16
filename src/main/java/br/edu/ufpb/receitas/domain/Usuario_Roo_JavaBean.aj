@@ -7,14 +7,6 @@ import br.edu.ufpb.receitas.domain.Usuario;
 
 privileged aspect Usuario_Roo_JavaBean {
     
-    public long Usuario.getId() {
-        return this.id;
-    }
-    
-    public void Usuario.setId(long id) {
-        this.id = id;
-    }
-    
     public String Usuario.getFotos() {
         return this.fotos;
     }

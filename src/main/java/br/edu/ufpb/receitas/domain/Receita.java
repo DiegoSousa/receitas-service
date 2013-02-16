@@ -8,16 +8,14 @@ import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.entity.RooJpaEntity;
+import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
 @RooJpaEntity
+@RooJson(deepSerialize = true)
 public class Receita {
-
-    @NotNull
-    @Column(unique = true)
-    private long id;
 
     @NotNull
     @Column(unique = true)
@@ -32,4 +30,7 @@ public class Receita {
 
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Ingrediente> ingredientes = new HashSet<Ingrediente>();
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Usuario> likes = new HashSet<Usuario>();
 }
