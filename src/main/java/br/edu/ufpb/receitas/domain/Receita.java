@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ManyToMany;
+import javax.persistence.FetchType;
 import javax.validation.constraints.NotNull;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.entity.RooJpaEntity;
@@ -28,9 +29,9 @@ public class Receita {
     @Column(unique = true)
     private String preparo;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Ingrediente> ingredientes = new HashSet<Ingrediente>();
-
-    @ManyToMany(cascade = CascadeType.ALL)
+    
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Usuario> likes = new HashSet<Usuario>();
 }
