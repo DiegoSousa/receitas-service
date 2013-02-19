@@ -2,7 +2,8 @@
 *.project
 *.classpath
 .settings
-
+WebContent/
+target/
 # Package Files #
 *.jar
 *.war
